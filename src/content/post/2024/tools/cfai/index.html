@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <!-- 引入 Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- 引入 Element UI 样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入 Element UI -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style>
+        #generatedImage {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <el-form id="inputForm" label-width="120px">
+            <el-form-item label="英文提示词">
+                <el-input v-model="prompt" type="textarea" placeholder="输入提示词..." clearable></el-input>
+            </el-form-item>
+
+            <el-form-item>
+                <el-button type="primary" :loading="loading" @click="generateImage">生成图片</el-button>
+            </el-form-item>
+        </el-form>
+        <img id="generatedImage" v-if="imageSrc" :src="imageSrc" alt="Generated Image" />
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    prompt: '',
+                    steps: 4,
+                    imageSrc: '',
+                    loading: false
+                };
+            },
+            methods: {
+                generateImage() {
+                    if (!this.prompt) {
+                        this.$message.error('Please enter a prompt.');
+                        return;
+                    }
+
+                    this.loading = true;
+                    const waitingMessage = this.$message({
+                        message: '请稍等,图片生成中...',
+                        type: 'info',
+                        duration: 0 
+                    });
+
+                    const url = 'http://xx.xx.xx.xx:6611/api/password'; //修改为你的 IP
+                    const headers = {
+                        'Content-Type': 'application/json'
+                    };
+                    const body = {
+                        "prompt": this.prompt,
+                        "num_steps": 8
+                    };
+
+                    fetch(url, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify(body),
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(text => {
+                        try {
+                            const data = JSON.parse(text);
+                            console.log('Parsed JSON data:', data);
+
+                            this.$message.closeAll(); 
+
+                            if (data.success && data.result && data.result.image) {
+                                this.imageSrc = `data:image/jpeg;base64,${data.result.image}`;
+                                this.$message.success('Image generated successfully!');
+                            } else {
+                                this.$message.error('Failed to generate image.');
+                            }
+                        } catch (error) {
+                            console.error('Failed to parse JSON response:', text);
+                            this.$message.error('Error parsing response.');
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Fetch Error:', error);
+                        this.$message.error('Error fetching image.');
+                    })
+                    .finally(() => {
+                        this.loading = false;
+                        this.$message.closeAll(); 
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

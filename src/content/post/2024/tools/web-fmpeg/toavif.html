@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editor</title>
+    <script src="ffmpeg.min.js"></script>
+    <style>
+        /* 添加一些基本的样式 */
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button, input { margin: 5px; padding: 5px; }
+        #status { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Video Editor</h1>
+    
+    <div>
+        <label >选择主视频: </label>
+        <input type="file" id="mainVideo" accept="video/*">       
+    </div>
+    
+    <div>
+        <label >选择进度条视频:</label>
+        <input type="file" id="progressVideo" accept="video/*">       
+    </div>
+    
+    <div>
+        <label >时:</label>
+        <input style="width: 40px;" type="text" id="trimHour" placeholder="时(00)">
+        <label >分:</label>
+        <input style="width: 40px;" type="text" id="trimMinute" placeholder="分(00)">
+        <label >秒:</label>
+        <input style="width: 40px;" type="text" id="trimSecond" placeholder="秒(00)">
+    </div>
+    
+    <div>
+        <label >crf:</label>
+        <input style="width: 200px;" type="text" id="crf" placeholder="输入crf（0-63，越低质量越好）">
+    </div>
+    
+    <div>
+        <label >输入输出文件名:</label>
+        <input type="text" id="outputName" placeholder="输入输出文件名">
+    </div>
+    
+    <button onclick="processVideos()">处理视频</button>
+    
+    <div id="status"></div>
+
+    <script>
+        const { createFFmpeg, fetchFile } = FFmpeg;
+        const ffmpeg = createFFmpeg({ log: true });
+
+        async function processVideos() {
+            if (!ffmpeg.isLoaded()) {
+                await ffmpeg.load();
+            }
+
+            const mainVideo = document.getElementById('mainVideo').files[0];
+            const progressVideo = document.getElementById('progressVideo').files[0];
+            const trimHour = document.getElementById('trimHour').value;
+            const trimMinute = document.getElementById('trimMinute').value;
+            const trimSecond = document.getElementById('trimSecond').value;
+            const crf = document.getElementById('crf').value;
+            const outputName = document.getElementById('outputName').value;
+
+            if (!mainVideo || !progressVideo || !trimHour || !trimMinute || !trimSecond || !crf || !outputName) {
+                alert('请确保所有字段都已填写');
+                return;
+            }
+
+            updateStatus('开始处理视频...');
+
+            // 将视频文件写入FFmpeg的虚拟文件系统
+            ffmpeg.FS('writeFile', 'main.mp4', await fetchFile(mainVideo));
+            ffmpeg.FS('writeFile', 'progress.mp4', await fetchFile(progressVideo));
+
+            // 构建时间字符串
+            const trimTime = `${trimHour}:${trimMinute}:${trimSecond}`;
+
+            try {
+                // 裁剪主视频
+                await ffmpeg.run('-ss', trimTime, '-i', 'main.mp4', '-t', '10', '-c', 'copy', 'trimmed.mp4');
+                await ffmpeg.run(
+                    '-format')
+                // 合并视频
+                await ffmpeg.run(
+                    '-i', 'trimmed.mp4',
+                    '-i', 'progress.mp4',
+                    '-filter_complex', '[1:v] crop=in_w:10:0:1080-10 [jdt]; [jdt] setpts=PTS-STARTPTS [jdt_sync]; [0:v][jdt_sync] overlay=(W-w)/2:H-h [outv]',
+                    '-map', '[outv]',
+                    '-c:v', 'libx264',
+                    '-crf', crf,
+                    '-pix_fmt', 'yuv420p',
+                    '-an',
+                    `${outputName}.mp4`
+                );
+
+                // 读取输出文件
+                const data = ffmpeg.FS('readFile', `${outputName}.mp4`);
+
+                // 创建下载链接
+                const blob = new Blob([data.buffer], { type: 'video/mp4' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${outputName}.mp4`;
+                a.click();
+
+                updateStatus('视频处理完成，正在下载...');
+            } catch (error) {
+                updateStatus('处理视频时出错: ' + error.message);
+            }
+        }
+
+        function updateStatus(message) {
+            document.getElementById('status').textContent = message;
+        }
+    </script>
+</body>
+</html>

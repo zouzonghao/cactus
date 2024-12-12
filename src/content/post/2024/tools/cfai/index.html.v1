@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <style>
+        #generatedImage {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="inputForm">
+        <label for="prompt">Prompt:</label>
+        <input type="text" id="prompt" placeholder="Enter prompt here...">
+        <br>
+        <label for="steps">Number of Steps:</label>
+        <input type="number" id="steps" min="1" value="4">
+        <br>
+        <button type="button" onclick="generateImage()">Generate Image</button>
+    </form>
+    <img id="generatedImage" style="display:none;" alt="Generated Image" />
+    <pre id="responseText" style="display:none;"></pre>
+
+    
+    <script>
+        function generateImage() {
+            const promptInput = document.getElementById('prompt');
+            const stepsInput = document.getElementById('steps');
+
+            if (!promptInput.value) {
+                alert("Please enter a prompt.");
+                return;
+            }
+
+            const url = 'http://xx.xx.xx.xx:80/api/flux'; // 或者你的实际域名
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+            const body = {
+                "prompt": promptInput.value,
+                "num_steps": parseInt(stepsInput.value)
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify(body),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text(); // 获取原始响应文本
+            })
+            .then(text => {
+
+
+                try {
+                    const data = JSON.parse(text);
+                    console.log('Parsed JSON data:', data);
+
+                    if (data.success && data.result && data.result.image) {
+                        const imgElement = document.getElementById('generatedImage');
+                        imgElement.src = `data:image/jpeg;base64,${data.result.image}`; // 设置图片源
+                        imgElement.style.display = 'block'; // 显示图片
+                    } else {
+                        console.error('No image or success flag in the API response.', data);
+                    }
+                } catch (error) {
+                    console.error('Failed to parse JSON response:', text);
+                    document.getElementById('responseText').textContent = text;
+                    document.getElementById('responseText').style.display = 'block';
+                }
+            })
+            .catch((error) => {
+                console.error('Fetch Error:', error);
+            });
+        }
+
+        function displayImage(imageUrl) {
+            document.getElementById('generatedImage').src = imageUrl;
+            document.getElementById('generatedImage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
