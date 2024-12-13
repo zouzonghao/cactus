@@ -28,7 +28,7 @@ interface Props {
 const { page, uniqueTags } = Astro.props;
 
 const meta = {
-	description: "Read my collection of posts and the things that interest me",
+	description: "点点滴滴，江河湖海",
 	// 修改：随笔
 	title: "随笔",
 };
@@ -107,7 +107,7 @@ const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 						{uniqueTags.map((tag) => (
 							<li>
 								<a
-									aria-label={`View all posts with the tag: ${tag}`}
+									aria-label={`关于 ${tag} 的全部`}
 									class="cactus-link flex items-center justify-center"
 									href={`/tags/${tag}/`}
 								>
