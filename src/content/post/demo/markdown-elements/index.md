@@ -1,104 +1,103 @@
 ---
-title: "A post of Markdown elements"
-description: "This post is for testing and listing a number of different markdown elements"
-publishDate: "22 Feb 2023"
-updatedDate: 22 Jan 2024
-tags: ["test", "markdown"]
+title: "一篇关于Markdown元素的文章"
+description: "这篇文章用于测试和列出多种不同的Markdown元素"
+publishDate: "2023-2-22"
+tags: ["测试", "markdown"]
 ogImage: "/social-card.avif"
 ---
 
-## This is a H2 Heading
+## 这是一个H2标题
 
-### This is a H3 Heading
+### 这是一个H3标题
 
-#### This is a H4 Heading
+#### 这是一个H4标题
 
-##### This is a H5 Heading
+##### 这是一个H5标题
 
-###### This is a H6 Heading
+###### 这是一个H6标题
 
-## Horizontal Rules
-
----
+## 水平线
 
 ---
 
 ---
 
-## Emphasis
+---
 
-**This is bold text**
+## 强调
 
-_This is italic text_
+**这是粗体文本**
 
-~~Strikethrough~~
+_这是斜体文本_
 
-## Quotes
+~~删除线~~
 
-"Double quotes" and 'single quotes'
+## 引用
 
-## Blockquotes
+"双引号" 和 '单引号'
 
-> Blockquotes can also be nested...
+## 块引用
+
+> 块引用也可以嵌套...
 >
-> > ...by using additional greater-than signs right next to each other...
+> > ...通过在每个块引用符号旁边使用额外的大于号...
 
-## References
+## 参考文献
 
-An example containing a clickable reference[^1] with a link to the source.
+一个包含可点击参考文献[^1]并链接到来源的例子。
 
-Second example containing a reference[^2] with a link to the source.
+第二个包含参考文献[^2]并链接到来源的例子。
 
-[^1]: Reference first footnote with a return to content link.
+[^1]: 第一个脚注的参考文献，带有返回内容的链接。
 
-[^2]: Second reference with a link.
+[^2]: 第二个参考文献，带有一个链接。
 
-If you check out this example in `src/content/post/markdown-elements/index.md`, you'll notice that the references and the heading "Footnotes" are added to the bottom of the page via the [remark-rehype](https://github.com/remarkjs/remark-rehype#options) plugin.
+如果你查看`src/content/post/markdown-elements/index.md`中的这个例子，你会发现参考文献和“脚注”标题是通过 [remark-rehype](https://github.com/remarkjs/remark-rehype#options) 插件添加到页面底部的。
 
-## Lists
+## 列表
 
-Unordered
+无序列表
 
-- Create a list by starting a line with `+`, `-`, or `*`
-- Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
+- 通过在行首使用 `+`, `-`, 或 `*` 来创建列表
+- 子列表通过缩进两个空格来实现：
+  - 更改标记字符会强制开始新的列表：
     - Ac tristique libero volutpat at
     - Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit
-- Very easy!
+- 非常简单！
 
-Ordered
+有序列表
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
 
-4. You can use sequential numbers...
-5. ...or keep all the numbers as `1.`
+4. 你可以使用连续的数字...
+5. ...或者将所有数字都设为 `1.`
 
-Start numbering with offset:
+从偏移量开始编号：
 
 57. foo
 1. bar
 
-## Code
+## 代码
 
-Inline `code`
+内联 `code`
 
-Indented code
+缩进代码
 
     // Some comments
     line 1 of code
     line 2 of code
     line 3 of code
 
-Block code "fences"
+代码块 "fences"
 
 ```
 Sample text here...
 ```
 
-Syntax highlighting
+语法高亮
 
 ```js
 var foo = function (bar) {
@@ -108,21 +107,21 @@ var foo = function (bar) {
 console.log(foo(5));
 ```
 
-### Expressive code examples
+### 表达性代码示例
 
-Adding a title
+添加标题
 
 ```js title="file.js"
 console.log("Title example");
 ```
 
-A bash terminal
+Bash终端
 
 ```bash
 echo "A base terminal example"
 ```
 
-Highlighting code lines
+高亮代码行
 
 ```js title="line-markers.js" del={2} ins={3-4} {6}
 function demo() {
@@ -134,9 +133,9 @@ function demo() {
 }
 ```
 
-[Expressive Code](https://expressive-code.com/) can do a ton more than shown here, and includes a lot of [customisation](https://expressive-code.com/reference/configuration/).
+[Expressive Code](https://expressive-code.com/) 可以做比这里展示的多得多的事情，并且包括很多 [自定义选项](https://expressive-code.com/reference/configuration/)。
 
-## Tables
+## 表格
 
 | Option | Description                                                               |
 | ------ | ------------------------------------------------------------------------- |
@@ -144,14 +143,14 @@ function demo() {
 | engine | engine to be used for processing templates. Handlebars is the default.    |
 | ext    | extension to be used for dest files.                                      |
 
-### Table Alignment
+### 表格对齐
 
 | Item         | Price | # In stock |
 | ------------ | :---: | ---------: |
 | Juicy Apples | 1.99  |        739 |
 | Bananas      | 1.89  |          6 |
 
-### Keyboard elements
+### 键盘元素
 
 | Action                | Shortcut                                   |
 | --------------------- | ------------------------------------------ |
@@ -163,12 +162,12 @@ function demo() {
 | Close a split         | <kbd>Ctrl+Shift+W</kbd>                    |
 | Maximize a pane       | <kbd>Ctrl+Shift+P</kbd> + Toggle pane zoom |
 
-## Images
+## 图像
 
-Image in the same folder: `src/content/post/markdown-elements/logo.png`
+同一文件夹中的图像：`src/content/post/markdown-elements/logo.png`
 
 ![Astro theme cactus logo](./logo.png)
 
-## Links
+## 链接
 
-[Content from markdown-it](https://markdown-it.github.io/)
+[Markdown-it的内容](https://markdown-it.github.io/)
