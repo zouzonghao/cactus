@@ -45,10 +45,10 @@ export default defineConfig({
 			/**
 			 * optional
 			 **/
-			// short_name: "Astro_Cactus",
+			short_name: "三七の小站",
 			description: siteConfig.description,
 			lang: siteConfig.lang,
-			icon: "public/logo", // the source for generating favicon & icons
+			icon: "public/logo.webp", // the source for generating favicon & icons
 			icons: [
 				{
 					src: "icons/apple-touch-icon.png", // used in src/components/BaseHead.astro L:26
@@ -93,12 +93,16 @@ export default defineConfig({
 			footnoteLabelProperties: {
 				className: [""],
 			},
+      footnoteLabel: '脚注：',
 		},
 	},
 	// https://docs.astro.build/en/guides/prefetch/
-	prefetch: true,
+	prefetch: {
+    defaultStrategy: 'viewport',
+    prefetchAll: true
+  },
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://astro-cactus.chriswilliams.dev/",
+	site: "https://0.343700.xyz/",
 	vite: {
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],

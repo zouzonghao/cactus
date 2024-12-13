@@ -3,6 +3,7 @@ title: "Markdown 提示框"
 description: "本文展示了在 Astro Cactus 中使用 Markdown 提示框功能"
 publishDate: "2024-12-12"
 tags: ["markdown", "提示框"]
+ogImage: "/social-card.avif"
 ---
 
 ## 什么是提示框

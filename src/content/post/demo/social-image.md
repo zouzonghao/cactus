@@ -3,10 +3,10 @@ title: "Example OG Social Image"
 publishDate: "27 January 2023"
 description: "An example post for Astro Cactus, detailing how to add a custom social image card in the frontmatter"
 coverImage:
-  src: "public/202407201742179.avif"
+  src: "public/social-card.avif"
   alt: "Astro Cactus Logo"
 tags: ["example", "blog", "image"]
-ogImage: "/social-card.png"
+ogImage: "/social-card.avif"
 ---
 
 ## Adding your own social image to a post
