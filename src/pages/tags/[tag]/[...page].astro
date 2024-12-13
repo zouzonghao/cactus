@@ -30,19 +30,19 @@ const { tag } = Astro.params;
 
 const meta = {
 	description: `View all posts with the tag - ${tag}`,
-	title: `Tag: ${tag}`,
+	title: `标签: ${tag}`,
 };
 
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
-			text: "← Previous Tags",
+			text: "上一页",
 			url: page.url.prev,
 		},
 	}),
 	...(page.url.next && {
 		nextUrl: {
-			text: "Next Tags →",
+			text: "下一页",
 			url: page.url.next,
 		},
 	}),
@@ -50,10 +50,10 @@ const paginationProps = {
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6 flex items-center">
-		<a class="text-accent sm:hover:underline" href="/tags/">Tags</a>
-		<span class="me-3 ms-2">→</span>
-		<span class="text-xl">#{tag}</span>
+	<h1 class="title mb-6 flex items-center text-xl">
+		<a class="text-accent sm:hover:underline" href="/tags/">标签</a>
+		<!-- <span class="me-3 ms-2">→</span> -->
+		<span class="ml-3 text-xl">#{tag}</span>
 	</h1>
 	<section aria-label="Blog post list">
 		<ul class="space-y-4">

@@ -1,35 +1,35 @@
 ---
-title: "Markdown Admonitions"
-description: "This post showcases using the markdown admonition feature in Astro Cactus"
+title: "Markdown 提示框"
+description: "本文展示了在 Astro Cactus 中使用 Markdown 提示框功能"
 publishDate: "2024-12-12"
-tags: ["markdown", "admonitions"]
+tags: ["markdown", "提示框"]
 ---
 
-## What are admonitions
+## 什么是提示框
 
-Admonitions (also known as “asides”) are useful for providing supportive and/or supplementary information related to your content.
+提示框（也称为“侧边栏”）用于提供与内容相关的支持性和/或补充性信息。
 
-## How to use them
+## 如何使用
 
-To use admonitions in Astro Cactus, wrap your Markdown content in a pair of triple colons `:::`. The first pair should also include the type of admonition you want to use.
+在 Astro Cactus 中使用提示框，将你的 Markdown 内容包裹在一对三冒号 `:::` 中。第一对冒号还应包含你想要使用的提示框类型。
 
-For example, with the following Markdown:
+例如，使用以下 Markdown：
 
 ```md
 :::note
-Highlights information that users should take into account, even when skimming.
+突出显示用户应注意的信息，即使在快速浏览时也应留意。
 :::
 ```
 
-Outputs:
+输出：
 
 :::note
-Highlights information that users should take into account, even when skimming.
+突出显示用户应注意的信息，即使在快速浏览时也应留意。
 :::
 
-## Admonition Types
+## 提示框类型
 
-The following admonitions are currently supported:
+目前支持以下提示框类型：
 
 - `note`
 - `tip`
@@ -37,78 +37,78 @@ The following admonitions are currently supported:
 - `warning`
 - `caution`
 
-### Note
+### 注意
 
 ```md
 :::note
-Highlights information that users should take into account, even when skimming.
+突出显示用户应注意的信息，即使在快速浏览时也应留意。
 :::
 ```
 
 :::note
-Highlights information that users should take into account, even when skimming.
+突出显示用户应注意的信息，即使在快速浏览时也应留意。
 :::
 
-### Tip
+### 提示
 
 ```md
 :::tip
-Optional information to help a user be more successful.
+可选信息，帮助用户更成功。
 :::
 ```
 
 :::tip
-Optional information to help a user be more successful.
+可选信息，帮助用户更成功。
 :::
 
-### Important
+### 重要
 
 ```md
 :::important
-Crucial information necessary for users to succeed.
+用户成功所必需的关键信息。
 :::
 ```
 
 :::important
-Crucial information necessary for users to succeed.
+用户成功所必需的关键信息。
 :::
 
-### Warning
+### 警告
 
 ```md
 :::warning
-Critical content demanding immediate user attention due to potential risks.
+由于潜在风险，需要用户立即关注的关键内容。
 :::
 ```
 
 :::warning
-Critical content demanding immediate user attention due to potential risks.
+由于潜在风险，需要用户立即关注的关键内容。
 :::
 
-### Caution
+### 小心
 
 ```md
 :::caution
-Negative potential consequences of an action.
+行动的负面潜在后果。
 :::
 ```
 
 :::caution
-Negative potential consequences of an action.
+行动的负面潜在后果。
 :::
 
-## Customising the admonition title
+## 自定义提示框标题
 
-You can customise the admonition title using the following markup:
+你可以使用以下标记自定义提示框标题：
 
 ```md
-:::note[My custom title]
-This is a note with a custom title.
+:::note[我的自定义标题]
+这是一个带有自定义标题的提示框。
 :::
 ```
 
-Outputs:
+输出：
 
-:::note[My custom title]
-This is a note with a custom title.
+:::note[我的自定义标题]
+这是一个带有自定义标题的提示框。
 :::

@@ -48,7 +48,7 @@ export default defineConfig({
 			// short_name: "Astro_Cactus",
 			description: siteConfig.description,
 			lang: siteConfig.lang,
-			icon: "public/logo.avif", // the source for generating favicon & icons
+			icon: "public/logo", // the source for generating favicon & icons
 			icons: [
 				{
 					src: "icons/apple-touch-icon.png", // used in src/components/BaseHead.astro L:26
