@@ -11,7 +11,7 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 const { as: Tag = "div", post, withDesc = false } = Astro.props;
 ---
 
-<!-- 修改：主页字体 -->
+<!-- 修改：主页文章字体 -->
 <FormattedDate
 	class="mt-1.5 min-w-[120px] font-semibold text-gray-600 dark:text-gray-400"
 	date={post.data.publishDate}

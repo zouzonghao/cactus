@@ -7,7 +7,7 @@ def modify_md_file(file_path):
         content = file.read()
 
     # 匹配 YAML Front Matter 的正则表达式
-    yaml_pattern = re.compile(r"---\n(.*?)\n---", re.DOTALL)
+    yaml_pattern = re.compile(r"^---\n(.*?)\n---", re.DOTALL | re.MULTILINE)
     match = yaml_pattern.search(content)
 
     if not match:

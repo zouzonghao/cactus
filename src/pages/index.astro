@@ -47,6 +47,7 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 			<!-- 修改：添加更多... -->
 			<a class="underline-offset-4 sm:hover:underline" href="/posts/">更多...</a>
 		</h2>
+		<!-- 修改： latestNotes.length < 0 控制不显示札记-->
 	</section>
 	{
 		latestNotes.length < 0 && (
