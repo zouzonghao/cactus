@@ -1,8 +1,8 @@
 ---
-title: "一篇关于Markdown元素的文章"
+title: "示例1 Markdown 基本语法"
 description: "这篇文章用于测试和列出多种不同的Markdown元素"
-publishDate: "2023-2-22"
-tags: ["测试", "markdown"]
+publishDate: "1998-07-30"
+tags: ["示例"]
 ogImage: "/social-card.avif"
 ---
 
@@ -18,11 +18,11 @@ ogImage: "/social-card.avif"
 
 ## 水平线
 
----
+***
 
 ---
 
----
+___
 
 ## 强调
 
@@ -164,7 +164,7 @@ function demo() {
 
 ## 图像
 
-同一文件夹中的图像：`src/content/post/markdown-elements/logo.png`
+同一文件夹中的图像：`src/content/post/demo/markdown-elements/logo.png`
 
 ![Astro theme cactus logo](./logo.png)
 

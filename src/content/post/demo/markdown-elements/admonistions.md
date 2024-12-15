@@ -1,8 +1,8 @@
 ---
-title: "Markdown 提示框"
-description: "本文展示了在 Astro Cactus 中使用 Markdown 提示框功能"
-publishDate: "2024-12-12"
-tags: ["markdown", "提示框"]
+title: "示例2 Markdown 提示框"
+description: "本文展示了在仙人掌中使用 Markdown 提示框功能"
+publishDate: "1998-07-29"
+tags: ["示例"]
 ogImage: "/social-card.avif"
 ---
 
