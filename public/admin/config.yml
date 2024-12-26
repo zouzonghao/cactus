@@ -7,19 +7,220 @@ backend:
   auth_endpoint: oauth # the oauth route provided by the integration
 
 collections:
-  - name: "blog" # 用于路由，例如，/admin/collections/blog
-    label: "Blog-" # 在 UI 中使用
-    folder: "src/content/post/{{year}}/{{month}}月/{{slug}}" # 存储文档的文件夹路径
-    create: true # 允许用户在此集合中创建新文档
-    fields: # 每个文档的字段，通常在 front matter 中
-      - { label: "布局", name: "layout", widget: "hidden", default: "blog" }
+  - name: "202308"
+    label: "2023年08月"
+    folder: "src/content/post/2023/08月"
+    create: true
+    fields:
       - { label: "标题", name: "title", widget: "string" }
       - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
       - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
       - { label: "标签", name: "tags", widget: "list" }
       - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
-      # - { label: "缩略图", name: "thumbnail", widget: "image" }
-      # - { label: "评分（1-5 的范围）", name: "rating", widget: "number" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202309"
+    label: "2023年09月"
+    folder: "src/content/post/2023/09月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202310"
+    label: "2023年10月"
+    folder: "src/content/post/2023/10月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202311"
+    label: "2023年11月"
+    folder: "src/content/post/2023/11月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202312"
+    label: "2023年12月"
+    folder: "src/content/post/2023/12月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202401"
+    label: "2024年01月"
+    folder: "src/content/post/2024/01月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202402"
+    label: "2024年02月"
+    folder: "src/content/post/2024/02月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202403"
+    label: "2024年03月"
+    folder: "src/content/post/2024/03月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202404"
+    label: "2024年04月"
+    folder: "src/content/post/2024/04月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202405"
+    label: "2024年05月"
+    folder: "src/content/post/2024/05月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202406"
+    label: "2024年06月"
+    folder: "src/content/post/2024/06月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202407"
+    label: "2024年07月"
+    folder: "src/content/post/2024/07月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202408"
+    label: "2024年08月"
+    folder: "src/content/post/2024/08月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202409"
+    label: "2024年09月"
+    folder: "src/content/post/2024/09月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202410"
+    label: "2024年10月"
+    folder: "src/content/post/2024/10月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202411"
+    label: "2024年11月"
+    folder: "src/content/post/2024/11月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202412"
+    label: "2024年12月"
+    folder: "src/content/post/2024/12月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "202501"
+    label: "2025年01月"
+    folder: "src/content/post/2025/01月"
+    create: true
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
       - { label: "正文", name: "body", widget: "markdown" }
 
 media_folder: "src/assets/images" # 文件将被存储在仓库中的位置
