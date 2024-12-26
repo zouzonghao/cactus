@@ -1,0 +1,9 @@
+{
+  "public": true,
+  "rewrites": [
+    {
+      "source": "/pagefind/(.*)",
+      "destination": "/pagefind/$1"
+    }
+  ]
+}
