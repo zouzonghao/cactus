@@ -9,12 +9,15 @@ backend:
 collections:
   - name: "blog" # 用于路由，例如，/admin/collections/blog
     label: "Blog-" # 在 UI 中使用
-    folder: "src/content/post" # 存储文档的文件夹路径
+    folder: "src/content/post/{{year}}/{{month}}月/{{slug}}" # 存储文档的文件夹路径
     create: true # 允许用户在此集合中创建新文档
     fields: # 每个文档的字段，通常在 front matter 中
       - { label: "布局", name: "layout", widget: "hidden", default: "blog" }
       - { label: "标题", name: "title", widget: "string" }
-      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "简介", name: "description", widget: "string", default: "这是一篇有意思的文章" }
+      - { label: "发布日期", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
       # - { label: "缩略图", name: "thumbnail", widget: "image" }
       # - { label: "评分（1-5 的范围）", name: "rating", widget: "number" }
       - { label: "正文", name: "body", widget: "markdown" }
