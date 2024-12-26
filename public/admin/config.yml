@@ -225,3 +225,4 @@ collections:
 
 media_folder: "src/assets/images" # 文件将被存储在仓库中的位置
 public_folder: "/assets/images" # 上传媒体文件的 src 属性
+logo_url: https://0.343700.xyz/logo256.avif
