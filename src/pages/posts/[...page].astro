@@ -8,6 +8,8 @@ import { collectionDateSort } from "@/utils/date";
 import type { GetStaticPaths, Page } from "astro";
 import { Icon } from "astro-icon/components";
 
+export const prerender = true;
+
 export const getStaticPaths = (async ({ paginate }) => {
 	// 修改：每页显示文章数，最多标签数
 	const MAX_POSTS_PER_PAGE = 12;

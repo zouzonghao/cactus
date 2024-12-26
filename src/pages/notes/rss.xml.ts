@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content";
 import { siteConfig } from "@/site.config";
 import rss from "@astrojs/rss";
-
+export const prerender = true;
 export const GET = async () => {
 	const notes = await getCollection("note");
 
