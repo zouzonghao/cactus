@@ -34,7 +34,7 @@ backend:
   repo: dorukgezici/astro-decap-cms-oauth # 改为你的仓库
   site_domain: astro-decap-cms-oauth.vercel.app # 改为你的域名
   base_url: https://astro-decap-cms-oauth.vercel.app # 改为你的URL
-  auth_endpoint: oauth 
+  auth_endpoint: oauth
 
 # 参考文档：https://decapcms.org/docs/collection-folder/
 collections:
@@ -95,7 +95,7 @@ export const prerender = true;
 修改`package.json`
 
 ```json
-"postbuild": "pagefind --site dist --output-path .vercel/output/static/pagefind",
+"postbuild": "pagefind --site dist/client --output-path .vercel/output/static/pagefind",
 ```
 
 ### 7、在 github 上创建一个 oauth
