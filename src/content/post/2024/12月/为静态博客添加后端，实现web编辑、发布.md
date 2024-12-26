@@ -100,12 +100,10 @@ export const prerender = true;
 
 ### 7、在 github 上创建一个 oauth
 
-
-
 在 GitHub 上，转到设置 > 开发人员设置 > OAuth 应用 > 新的 OAuth 应用程序。或者使用此[直接链接](https://github.com/settings/applications/new)。
 
-- Homepage URL —— `你的域名`
-- Authorization callback URL —— `域名/oauth/callback`
+* Homepage URL —— `你的域名`
+* Authorization callback URL —— `域名/oauth/callback`
 
 ### 8、添加环境变量
 
@@ -114,6 +112,7 @@ export const prerender = true;
 将`.env`添加到`.gitignore`
 
 将刚刚创建的 Github OAuth 的 ID 和 SECRET 填入
+
 ```
 OAUTH_GITHUB_CLIENT_ID=
 OAUTH_GITHUB_CLIENT_SECRET=
@@ -125,12 +124,14 @@ PUBLIC_DECAP_CMS_VERSION=3.3.3
 
 将 `.env`导入
 
-
 ## 3、完成！
 
 通过 `example.com/admin` 登录后台
 
 ### 管理页
-![1226161344.avif](https://cdn.z.wiki/autoupload/20241226/ERfd/1226161344.avif)
+
+![](https://i.730307.xyz/20241226232159591.avif)
+
 ### 编辑页
-![1226161335.avif](https://cdn.z.wiki/autoupload/20241226/BoF9/1226161335.avif)
+
+![](https://i.730307.xyz/20241226232229909.avif)
