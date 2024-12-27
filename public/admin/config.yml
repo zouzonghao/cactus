@@ -29,7 +29,7 @@ collections:
           label: "发布日期",
           name: "publishDate",
           widget: "datetime",
-          date_format: "YYYY-MM-DD ",
+          date_format: "YYYY-MM-DD",
           time_format: "HH:mm",
           required: true,
         }
