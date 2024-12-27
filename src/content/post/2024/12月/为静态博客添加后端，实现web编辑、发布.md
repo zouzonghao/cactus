@@ -50,7 +50,7 @@ collections:
       - { label: "ogImage", name: "ogImage", widget: "string", default: "/social-card.avif" }
       - { label: "正文", name: "body", widget: "markdown" }
 
-media_folder: "src/assets/images" # 文件将被存储在仓库中的位置
+media_folder: "public/assets/images" # 文件将被存储在仓库中的位置
 public_folder: "/assets/images" # 上传媒体文件的 src 属性
 logo_url: https://888888.xyz/logo256.avif # 站点logo
 ```
@@ -68,6 +68,8 @@ pnpm install @astrojs/vercel
 添加：
 
 ```ts
+import vercel from "@astrojs/vercel";
+
 export default defineConfig({
   output: 'server',
   adapter: vercel(),
