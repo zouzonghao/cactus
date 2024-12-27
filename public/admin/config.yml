@@ -1,3 +1,5 @@
+title: "Decap CMS 配置"
+
 backend:
   name: github
   branch: main # change this to your branch
@@ -9,8 +11,8 @@ backend:
 search: false
 
 collections:
-  - name: "202412"
-    label: "2024年12月"
+  - name: "note202412"
+    label: "2024年12月札记"
     folder: "src/content/note/2024/12月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -33,8 +35,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202412"
-    label: "2024年12月"
+  - name: "post202412"
+    label: "2024年12月文章"
     folder: "src/content/post/2024/12月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -64,7 +66,7 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202411"
+  - name: "post202411"
     label: "2024年11月"
     folder: "src/content/post/2024/11月"
     create: true
@@ -95,8 +97,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202410"
-    label: "2024年10月"
+  - name: "post202410"
+    label: "2024年10月文章"
     folder: "src/content/post/2024/10月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -126,8 +128,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202409"
-    label: "2024年09月"
+  - name: "post202409"
+    label: "2024年09月文章"
     folder: "src/content/post/2024/09月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -157,8 +159,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202408"
-    label: "2024年08月"
+  - name: "post202408"
+    label: "2024年08月文章"
     folder: "src/content/post/2024/08月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -188,8 +190,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202407"
-    label: "2024年07月"
+  - name: "post202407"
+    label: "2024年07月文章"
     folder: "src/content/post/2024/07月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -219,8 +221,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202406"
-    label: "2024年06月"
+  - name: "post202406"
+    label: "2024年06月文章"
     folder: "src/content/post/2024/06月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -250,8 +252,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202405"
-    label: "2024年05月"
+  - name: "post202405"
+    label: "2024年05月文章"
     folder: "src/content/post/2024/05月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -281,8 +283,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202404"
-    label: "2024年04月"
+  - name: "post202404"
+    label: "2024年04月文章"
     folder: "src/content/post/2024/04月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -312,7 +314,7 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202403"
+  - name: "post202403"
     label: "2024年03月"
     folder: "src/content/post/2024/03月"
     create: true
@@ -343,8 +345,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202402"
-    label: "2024年02月"
+  - name: "post202402"
+    label: "2024年02月文章"
     folder: "src/content/post/2024/02月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -374,8 +376,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202401"
-    label: "2024年01月"
+  - name: "post202401"
+    label: "2024年01月文章"
     folder: "src/content/post/2024/01月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -405,8 +407,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202312"
-    label: "2023年12月"
+  - name: "post202312"
+    label: "2023年12月文章"
     folder: "src/content/post/2023/12月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -436,8 +438,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202311"
-    label: "2023年11月"
+  - name: "post202311"
+    label: "2023年11月文章"
     folder: "src/content/post/2023/11月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -467,8 +469,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202310"
-    label: "2023年10月"
+  - name: "post202310"
+    label: "2023年10月文章"
     folder: "src/content/post/2023/10月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -498,8 +500,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202309"
-    label: "2023年09月"
+  - name: "post202309"
+    label: "2023年09月文章"
     folder: "src/content/post/2023/09月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -529,8 +531,8 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "202308"
-    label: "2023年08月"
+  - name: "post202308"
+    label: "2023年08月文章"
     folder: "src/content/post/2023/08月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -566,6 +568,8 @@ collections:
       - label: "Decap CMS 配置"
         name: "decap"
         file: "public/admin/config.yml"
+        fields:
+          - { label: Title, name: title, widget: string }
 
       # - label: "Locations Page"
       #   name: "locations"
