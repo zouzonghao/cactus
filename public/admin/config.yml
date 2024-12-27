@@ -568,8 +568,11 @@ collections:
       - label: "Decap CMS 配置"
         name: "decap"
         file: "public/admin/config.yml"
+        summary: "{{fields.name}}"
         fields:
-          - { label: Title, name: title, widget: string }
+          - label: collections
+            name: collections
+            widget: code
 
       # - label: "Locations Page"
       #   name: "locations"
