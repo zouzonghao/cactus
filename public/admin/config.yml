@@ -67,7 +67,7 @@ collections:
       - { label: "正文", name: "body", widget: "markdown" }
 
   - name: "post202411"
-    label: "2024年11月"
+    label: "2024年11月文章"
     folder: "src/content/post/2024/11月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -315,7 +315,7 @@ collections:
       - { label: "正文", name: "body", widget: "markdown" }
 
   - name: "post202403"
-    label: "2024年03月"
+    label: "2024年03月文章"
     folder: "src/content/post/2024/03月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
@@ -572,7 +572,7 @@ collections:
         fields:
           - label: collections
             name: collections
-            widget: code
+            widget: text
 
       # - label: "Locations Page"
       #   name: "locations"
