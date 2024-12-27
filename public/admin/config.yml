@@ -562,31 +562,6 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - label: "配置"
-    name: "config"
-    files:
-      - label: "Decap CMS 配置"
-        name: "decap"
-        file: "public/admin/config.yml"
-        summary: "{{fields.name}}"
-        fields:
-          - label: collections
-            name: collections
-            widget: text
-
-      # - label: "Locations Page"
-      #   name: "locations"
-      #   file: "site/content/locations.yml"
-      #   fields:
-      #     - {label: Title, name: title, widget: string}
-      #     - {label: Intro, name: intro, widget: markdown}
-      #     - label: Locations
-      #       name: locations
-      #       widget: list
-      #       fields:
-      #         - {label: Name, name: name, widget: string}
-      #         - {label: Address, name: address, widget: string}
-
 media_folder: "src/assets/images" # 文件将被存储在仓库中的位置
 public_folder: "/assets/images" # 上传媒体文件的 src 属性
 logo_url: https://0.343700.xyz/logo256.avif
