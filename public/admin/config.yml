@@ -11,6 +11,37 @@ backend:
 search: false
 
 collections:
+  - name: "post202504"
+    label: "2025年04月文章"
+    folder: "src/content/post/2025/04月"
+    create: true
+    slug: "{{month}}.{{day}}_{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string", required: true }
+      - {
+          label: "简介",
+          name: "description",
+          widget: "string",
+          default: "这是一篇有意思的文章",
+          required: true,
+        }
+      - {
+          label: "发布日期",
+          name: "publishDate",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          required: true,
+        }
+      - { label: "标签", name: "tags", widget: "list", required: true }
+      - {
+          label: "ogImage",
+          name: "ogImage",
+          widget: "string",
+          default: "/social-card.avif",
+          required: true,
+        }
+      - { label: "正文", name: "body", widget: "markdown" }
+
   - name: "note202502"
     label: "2025年02月札记"
     folder: "src/content/note/2025/02月"
