@@ -11,9 +11,9 @@ backend:
 search: false
 
 collections:
-  - name: "post202505"
-    label: "2025年05月文章"
-    folder: "src/content/post/2025/05月"
+  - name: "post202507"
+    label: "2025年07月文章"
+    folder: "src/content/post/2025/07月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
     fields:
@@ -42,9 +42,9 @@ collections:
         }
       - { label: "正文", name: "body", widget: "markdown" }
 
-  - name: "note202505"
-    label: "2025年05月札记"
-    folder: "src/content/note/2025/05月"
+  - name: "note202507"
+    label: "2025年07月札记"
+    folder: "src/content/note/2025/07月"
     create: true
     slug: "{{month}}.{{day}}_{{slug}}"
     fields:
